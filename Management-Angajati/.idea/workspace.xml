@@ -26,21 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69583266-377b-4b42-836a-097bf53dc36f" name="Default" comment="GUI 70% complete">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/victortoader/angajati/client/view/DownPanel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/victortoader/angajati/client/view/MainWindow.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/victortoader/angajati/client/view/UpPanel.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/EmployeeController.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/EmployeeView$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/EmployeeView.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../UML_Diagram/Management_Angajati.class.violet.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/main/Main.class" afterPath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/main/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/model/Employee.class" afterPath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/model/Employee.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/model/EmployeeJAXB.class" afterPath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/model/EmployeeJAXB.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/model/EmployeeModel.class" afterPath="$PROJECT_DIR$/target/classes/com/victortoader/angajati/client/model/EmployeeModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/victortoader/angajati/client/controller/EmployeeController.java" afterPath="$PROJECT_DIR$/src/main/java/com/victortoader/angajati/client/controller/EmployeeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/victortoader/angajati/client/main/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/victortoader/angajati/client/main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/victortoader/angajati/client/view/EmployeeView.java" afterPath="$PROJECT_DIR$/src/main/java/com/victortoader/angajati/client/view/EmployeeView.java" />
     </list>
     <ignored path="Management-Angajati.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -825,6 +812,13 @@
       <updated>1457006547738</updated>
       <workItem from="1457006551402" duration="1534000" />
     </task>
+    <task id="LOCAL-00001" summary="GUI 70% complete">
+      <created>1457215323875</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1457215323875</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -836,7 +830,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21871477" sideWeight="0.48955068" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21871477" sideWeight="0.48955068" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08306011" sideWeight="0.5041797" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.073224045" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
