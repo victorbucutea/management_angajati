@@ -16,13 +16,32 @@ import java.util.List;
 public class EmployeeController {
 
 
+    public void addNewEmployee(String nume, String prenume, String adresa, int salariu, byte[] poza) {
+    }
 
+    ;
 
-    public void addNewEmployee(String nume, String prenume, String adresa, int salariu, byte[] poza){};
-    public void editEmployee(int Id){};
-    public void deleteEmployee(int id){};
-    public List<Employee> getAllEmployees(){};
-    public int getEmployee(int id){};
+    public void editEmployee(int Id) {
+    }
+
+    ;
+
+    public void deleteEmployee(int id) {
+    }
+
+    ;
+
+    public List<Employee> getAllEmployees() {
+        return null;
+    }
+
+    ;
+
+    public int getEmployee(int id) {
+        return 0;
+    }
+
+    ;
 
     private EmployeeView view;
 

@@ -15,58 +15,37 @@ import java.awt.event.ActionListener;
  */
 public class EmployeeView {
 
-    JTextField TxtNume;
-    JTextField TxtPrenume;
-    JTextField TxtSalariu;
-    JTextField TxtAdresa;
-    JTextField Id;
 
-    JLabel LBNume = new JLabel("Nume:");
-    JLabel LBPrenume = new JLabel("Prenume:");
-    JLabel LBSalariu = new JLabel("Salariu:");
-    JLabel LBAdresa = new JLabel("Adresa:");
-    JLabel LBId = new JLabel("Id:");
-    JLabel LBPOza=new JLabel("Poza angajat:");
 
-    JButton ButRefresh=new JButton("Refresh");
-    JButton ButAdauga=new JButton("Adauga");
-    JButton ButSterge=new JButton("Sterge");
-    JButton ButEditeaza=new JButton("Editeaza");
-    JButton ButExport=new JButton("Exporta XML");
-    JButton ButImport=new JButton("Importa XML");
 
-    JTable TableAngajati=new JTable();
-
+    JTable TableAngajati = new JTable();
 
 
     EmployeeController controller;
 
-    public void init() {
-        // initialize layout
-
-        initForm();
-        initButtons();
-        initTable();
-
-    }
-
-    private void initTable() {
-
-    }
-
-    private void initButtons() {
-        JButton x = new JButton();
-        x.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                controller.exportReport();
-            }
-        });
-
-    }
-
-    private void initForm() {
-
-
-    }
+//    public void init() {
+//        // initialize layout
+//
+//        initForm();
+//        initButtons();
+//        initTable();
+//
+//    }
+//
+//    private void initTable() {
+//
+//    }
+//
+//    private void initButtons() {
+//        JButton x = new JButton();
+//        x.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                controller.exportReport();
+//            }
+//        });
+//
+//    }
+//
+//    private void initForm() {}
 }
