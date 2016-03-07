@@ -5,51 +5,62 @@ package com.victortoader.angajati.client.model;
  */
 public class Employee {
 
-    private String Nume;
-    private String Prenume;
-    private String Salariu;
-    private String Adresa;
-    private String URLPoza;
+    private int id;
+    private String Name;
+    private String firstName;
+    private int salary;
+    private String adress;
+    private byte[] picture;
 
-    public String getNume() {
-        return Nume;
+
+    public int getId() {
+        return id;
     }
 
-    public void setNume(String nume) {
-        Nume = nume;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getPrenume() {
-        return Prenume;
+    public String getName() {
+        return Name;
     }
 
-    public void setPrenume(String prenume) {
-        Prenume = prenume;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public String getSalariu() {
-        return Salariu;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setSalariu(String salariu) {
-        Salariu = salariu;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getAdresa() {
-        return Adresa;
+    public int getSalary() {
+        return salary;
     }
 
-    public void setAdresa(String adresa) {
-        Adresa = adresa;
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 
-    public String getURLPoza() {
-        return URLPoza;
+    public String getAdress() {
+        return adress;
     }
 
-    public void setURLPoza(String URLPoza) {
-        this.URLPoza = URLPoza;
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    public byte[] getPicture() {
+        return picture;
+    }
+
+    public void setPicture(byte[] picture) {
+        this.picture = picture;
 
     }
+
 
 }

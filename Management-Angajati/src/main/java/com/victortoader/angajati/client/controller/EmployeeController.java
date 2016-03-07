@@ -2,8 +2,10 @@ package com.victortoader.angajati.client.controller;
 
 import com.victortoader.angajati.client.model.Employee;
 import com.victortoader.angajati.client.view.EmployeeView;
+import com.victortoader.angajati.client.view.UpPanel;
 import com.victortoader.angajati.server.EmployeeService;
 
+import java.sql.*;
 import java.util.List;
 
 /**
@@ -16,20 +18,70 @@ import java.util.List;
 public class EmployeeController {
 
 
-    public void addNewEmployee(String nume, String prenume, String adresa, int salariu, byte[] poza) {
+    public static Employee addNewEmployee(String name, String firstName, int salary, String adress) {
+
+        Employee employee = new Employee();
+        employee.setName(name);
+        employee.setFirstName(firstName);
+        employee.setSalary(salary);
+        employee.setAdress(adress);
+        return employee;
+
     }
 
     ;
 
-    public void editEmployee(int Id) {
+    public static void updateEmployee(int tfId, String name, String firstName, int salary, String adress, Connection conn) {
+        try {
+            String sql = "UPDATE Employees SET name=?, firstName=?, salary=?, address=? WHERE id=?";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, name);
+            statement.setString(2, firstName);
+            statement.setInt(3, salary);
+            statement.setString(4, adress);
+            statement.setInt(5, tfId);
+
+
+            int rowsUpdated = statement.executeUpdate();
+            if (rowsUpdated > 0) {
+                System.out.println("An existing employee was modified");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    ;
+    public void insertEmployee(Employee employee, Connection conn) {
+        try {
+            String sql = "INSERT INTO Employees(name, firstName, salary, email) VALUES (?, ?, ?, ?)";
+            PreparedStatement statement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            statement.setString(1, employee.getName());
+            statement.setString(2, employee.getFirstName());
+            statement.setInt(3, employee.getSalary());
+            statement.setString(4, employee.getAdress());
+            statement.executeUpdate();
 
-    public void deleteEmployee(int id) {
+            ResultSet generatedKeys = statement.getGeneratedKeys();
+            generatedKeys.next();
+            employee.setId((int) generatedKeys.getLong(1));
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    ;
+    public void deleteEmployee(Long id, Connection conn) {
+        try {
+            String sql = "DELETE FROM Employees WHERE user_id=?";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setLong(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     public List<Employee> getAllEmployees() {
         return null;
@@ -45,7 +97,7 @@ public class EmployeeController {
 
     private EmployeeView view;
 
-    // Remote object reference
+     // Remote object reference
     // e un obiect proxy. O clasa ce va apela s
     private EmployeeService service;
 
