@@ -1,15 +1,11 @@
 package com.victortoader.angajati.client.view;
 
 
-import com.victortoader.angajati.client.controller.EmployeeController;
-import com.victortoader.angajati.client.model.Employee;
-
 import javax.swing.*;
-import javax.swing.table.AbstractTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
+import java.io.File;
 
 /**
  * Created by Administrator on 10/21/2015.
@@ -34,14 +30,20 @@ public class UpPanel extends JPanel {
     public JTextField tfSalary = new JTextField(10);
     public JTextField tfAdress = new JTextField(10);
 
+
     JLabel lbStatus = new JLabel();
 
     JButton butDelete = new JButton("Delete");
     JButton butShow = new JButton("Show");
     JButton butUpdate = new JButton("Update");
     JButton butRefresh = new JButton("Refresh");
-    JButton ButExport = new JButton("XML Export");
-    JButton ButImport = new JButton("XML Import");
+    JButton butExport = new JButton("XML Export");
+    JButton butImport = new JButton("XML Import");
+    JButton butPicture = new JButton("Assign picture");
+
+    final JFileChooser fcPicture = new JFileChooser();
+    final JFileChooser fcExport = new JFileChooser();
+    final JFileChooser fcImport = new JFileChooser();
 
 
     UpPanel() {
@@ -64,14 +66,15 @@ public class UpPanel extends JPanel {
         add(tfAdress, new GridBagConstraints(2, 6, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 20, 0, 0), 0, 0));
 
         add(lbPicture, new GridBagConstraints(5, 1, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+        add(butPicture, new GridBagConstraints(5, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
 
         add(butDelete, new GridBagConstraints(1, 7, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
         add(butShow, new GridBagConstraints(1, 7, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
         add(butShow, new GridBagConstraints(2, 7, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0)); // !!!
         add(butUpdate, new GridBagConstraints(3, 7, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
         add(butRefresh, new GridBagConstraints(4, 7, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
-        add(ButImport, new GridBagConstraints(5, 7, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 20, 0, 0), 0, 0));
-        add(ButExport, new GridBagConstraints(6, 7, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
+        add(butImport, new GridBagConstraints(5, 7, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 20, 0, 0), 0, 0));
+        add(butExport, new GridBagConstraints(6, 7, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
 
         add(lbStatus, new GridBagConstraints(8, 1, 1, 1, 1, 1, GridBagConstraints.WEST, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
 
@@ -79,18 +82,65 @@ public class UpPanel extends JPanel {
         butInsert.setActionCommand("insert");
         butDelete.setActionCommand("delete");
         butShow.setActionCommand("show");
-        butInsert.setActionCommand("creaza");
         butUpdate.setActionCommand("update");
         butRefresh.setActionCommand("refresh");
-//        butInsert.addActionListener(new ButtonClickListener());
-//        butDelete.addActionListener(new ButtonClickListener());
-//        butShow.addActionListener(new ButtonClickListener());
-//        butUpdate.addActionListener(new ButtonClickListener());
+        butImport.setActionCommand("import");
+        butPicture.setActionCommand("picture");
+        butExport.setActionCommand("export");
 
-//        userDao = new UserDaoJdbc();
-//        userDao = new UserDaoHibernate();
+        butInsert.addActionListener(new ButtonClickListener());
+        butDelete.addActionListener(new ButtonClickListener());
+        butShow.addActionListener(new ButtonClickListener());
+        butUpdate.addActionListener(new ButtonClickListener());
+        butRefresh.addActionListener(new ButtonClickListener());
+        butImport.addActionListener(new ButtonClickListener());
+        butExport.addActionListener(new ButtonClickListener());
+        butPicture.addActionListener(new ButtonClickListener());
+
+
     }
 
+
+    private class ButtonClickListener implements ActionListener
+
+    {
+
+        public void actionPerformed(ActionEvent e) {
+            String command = e.getActionCommand();
+            if (command.equals("insert")) {
+
+            } else if (command.equals("delete")) {
+
+            } else if (command.equals("show")) {
+
+            } else if (command.equals("update")) {
+
+            } else if (command.equals("refresh")) {
+
+            } else if (command.equals("import")) {
+                int returnVal = fcImport.showOpenDialog(UpPanel.this);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = fcImport.getSelectedFile();
+
+
+                } else {
+                    System.out.print("Operation canceled by user");
+                }
+
+
+            } else if (command.equals("export")) {
+                int returnVal = fcExport.showSaveDialog(UpPanel.this);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = fcExport.getSelectedFile();
+                }
+
+
+            } else if (command.equals("picture")) {
+                int returnVal = fcPicture.showOpenDialog(UpPanel.this);
+
+            }
+        }
+    }
 //    private class ButtonClickListener implements ActionListener {
 //        public void actionPerformed(ActionEvent e) {
 //            String command = e.getActionCommand();
