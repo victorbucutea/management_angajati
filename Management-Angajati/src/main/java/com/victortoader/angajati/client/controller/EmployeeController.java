@@ -17,6 +17,7 @@ import java.util.List;
  */
 public class EmployeeController {
 
+   // private EmployeeService service;
 
     public static Employee addNewEmployee(String name, String firstName, int salary, String adress) {
 
@@ -28,7 +29,7 @@ public class EmployeeController {
         return employee;
 
     }
-
+//    service.addNewEmployee(employee);
     ;
 
     public static void updateEmployee(int tfId, String name, String firstName, int salary, String adress, Connection conn) {
@@ -111,12 +112,12 @@ public class EmployeeController {
 
     }
 
-    public void exportReport() {
-
-    }
-
-    public void importReport() {
-    }
+//    public XmlReport exportReport() {
+//
+//    }
+//
+//    public XmlReport importReport() {
+//    }
 
     // write all the methods that
 
